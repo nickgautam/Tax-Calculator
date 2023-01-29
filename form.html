@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Creation</title>
+</head>
+<body>
+    <form action="submit" method="post">
+        <h2>Form Data</h2>
+        <div>
+            <label for="name">Name:</label>
+             <input type="text" name="myName" placeholder="Enter your name" id="name">
+        </div>
+        <br>
+        <div>
+            <label for="role">Role:</label>
+             <input type="text" name="myRole" placeholder="Enter your role" id="role">
+        </div>
+        <br>
+        <div>
+            <label for="email">Email:</label>
+             <input type="email" name="myEmail" placeholder="Enter your email" id="email">
+        </div>
+        <br>
+        <div>
+            <label for="mobile">Mobile:</label>
+             <input type="number" name="myMobile" placeholder="Enter your mobile" id="mobile">
+        </div>
+        <br>
+        <div>
+            <label for="gender">Gender:</label><br>
+            Male <input type="radio" name="myGender" value="male" id="gender" checked>
+             
+             Female <input type="radio" name="myGender" value="male" id="gender">
+            
+             Other <input type="radio" name="myGender" value="male" id="gender">
+        </div>
+        <br> 
+        <div>
+            <label for="bonus">Bonus:</label>
+            <input type="number" name="myBonus" placeholder="Enter your bonus" id="bonus">
+        </div>
+        <br> 
+        <div>
+            <label for="elligibility">Are you elligible:</label><br>
+             Yes <input type="radio" name="myEligibility" value="yes" id="elligibility" checked>
+            No <input type="radio" name="myEligibility" value="no" id="elligibility">
+        </div>
+        <br>
+        <div>
+            <label for="date">Date:</label><br>
+            <input type="date" name="myDate" id="date">
+        </div>
+        <br>
+        <div>
+            <label for="car">Car:</label>
+         <select name="myCar" id="car">
+            <option value="creta" selected>creta</option>
+            <option value="indica">indica</option>
+            <option value="swift">swift</option>
+         </select>
+        </div>
+        <br>
+        <div>
+            <label for="describeYourself">Describe yourself:</label><br>
+         <textarea name="introduction" id="describeYourself" cols="100" rows="7"></textarea>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+        </div>
+        
+       
+    </form>
+</body>
+</html>
