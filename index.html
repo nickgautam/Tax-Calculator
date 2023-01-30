@@ -180,7 +180,7 @@
 
         <br>
 
-        <input type="number" onchange="getSalary(this)" placeholder="" />
+        <input type="number" name="salary" onchange="getSalary(this)" placeholder="" autocomplete="true"/>
 
         <br><br>
 
@@ -188,7 +188,7 @@
 
         <br />
 
-        <input type="number" onchange="getDeduction(this)" placeholder="" />
+        <input type="number" name="deduction" onchange="getDeduction(this)" placeholder="" autocomplete="true"/>
 
         <br /><br />
 
@@ -196,7 +196,7 @@
 
         <br />
 
-        <input type="number" onchange="getInterest(this)" placeholder="" />
+        <input type="number" name="interest" onchange="getInterest(this)" placeholder="" autocomplete="true"/>
 
         <br /><br />
 
@@ -204,7 +204,7 @@
 
         <br />
 
-        <input type="number" onchange="getotherIncome(this)" placeholder="" />
+        <input type="number" name="otherIncome" onchange="getotherIncome(this)" placeholder="" autocomplete="true"/>
 
         <br><br>
 
@@ -212,7 +212,7 @@
 
         <br />
 
-        <input type="number" onchange="gethomeLoan(this)" placeholder="" />
+        <input type="number" name="homeLoan" onchange="gethomeLoan(this)" placeholder="" autocomplete="true"/>
 
         <br /><br />
 
@@ -220,7 +220,7 @@
 
         <br />
 
-        <input type="number" onchange="getrentalIncome(this)" placeholder="" />
+        <input type="number" name="rentalIncome" onchange="getrentalIncome(this)" placeholder="" autocomplete="true"/>
 
         <br /><br />
 
@@ -228,7 +228,7 @@
 
         <br />
 
-        <input type="number" onchange="getinterestLoan(this)" placeholder="" />
+        <input type="number" name="interestLoan" onchange="getinterestLoan(this)" placeholder="" autocomplete="true"/>
 
         <br /><br />
 
@@ -244,7 +244,7 @@
 
         <br />
 
-        <input type="number" onchange="getbasicDeduction(this)" placeholder="" />
+        <input type="number" name="basicDeduction" onchange="getbasicDeduction(this)" placeholder="" autocomplete="true"/>
 
         <br /><br />
 
@@ -252,7 +252,7 @@
 
         <br />
 
-        <input type="number" onchange="getinterestDeposit(this)" placeholder="" />
+        <input type="number" name="interestDeposit" onchange="getinterestDeposit(this)" placeholder="" autocomplete="true"/>
 
         <br /><br />
 
@@ -260,7 +260,7 @@
 
         <br />
 
-        <input type="number" onchange="getmedicalInsurance(this)" placeholder="" />
+        <input type="number" name="medicalInsurance" onchange="getmedicalInsurance(this)" placeholder="" autocomplete="true"/>
 
         <br /><br />
 
@@ -268,7 +268,7 @@
 
         <br />
 
-        <input type="number" onchange="getcharityDonation(this)" placeholder="" />
+        <input type="number" name="charityDonation" onchange="getcharityDonation(this)" placeholder="" autocomplete="true"/>
 
         <br /><br />
 
@@ -276,7 +276,7 @@
 
         <br />
 
-        <input type="number" onchange="geteducationalLoan(this)" placeholder="" />
+        <input type="number" name="educationalLoan" onchange="geteducationalLoan(this)" placeholder="" autocomplete="true"/>
 
         <br /><br />
 
@@ -284,7 +284,7 @@
 
         <br />
 
-        <input type="number" onchange="gethousingLoan(this)" placeholder="" />
+        <input type="number" name="housingLoan"  onchange="gethousingLoan(this)" placeholder="" autocomplete="true"/>
 
         <br /><br />
 
@@ -292,7 +292,7 @@
 
         <br />
 
-        <input type="number" onchange="getemployeeContribution(this)" placeholder="" />
+        <input type="number" name="employeeContribution" onchange="getemployeeContribution(this)" placeholder="" autocomplete="true"/>
 
         <br /><br />
 
@@ -304,10 +304,7 @@
 
 
       <div class="col-xs-12 tab-pane fade" id="summary"></div>
-      <p>
-        ClearTax Suggestion: You should opt for Old Regime as it allows you to avail exemptions and deductions from your
-        income sources.
-      </p>
+      <p id="suggestion" ></p>
 
       <table class="table">
         <thead>
