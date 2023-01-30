@@ -183,21 +183,21 @@ function calculate() {
         document.getElementById("old_tax").innerHTML = oldRegimeTax;
       }
 
-      if (taxableIncome > 300000 && taxableIncome <= 500000) {
+      else if (taxableIncome > 300000 && taxableIncome <= 500000) {
         oldRegimeTax = ((taxableIncome - 300000) * 5) / 100;
         oldRegimeTax = oldRegimeTax + (oldRegimeTax * 4) / 100;
         // console.log(tax)
         document.getElementById("old_tax").innerHTML = oldRegimeTax;
       }
 
-      if (taxableIncome > 500000 && taxableIncome <= 1000000) {
+      else if (taxableIncome > 500000 && taxableIncome <= 1000000) {
         oldRegimeTax = ((taxableIncome - 500000) * 20) / 100 + 10000;
         oldRegimeTax = oldRegimeTax + (oldRegimeTax * 4) / 100;
         // console.log(tax)
         document.getElementById("old_tax").innerHTML = oldRegimeTax;
       }
 
-      if (taxableIncome > 1000000) {
+      else if (taxableIncome > 1000000) {
         oldRegimeTax = ((taxableIncome - 1000000) * 30) / 100 + 110000;
         oldRegimeTax = oldRegimeTax + (oldRegimeTax * 4) / 100;
         // console.log(tax)
