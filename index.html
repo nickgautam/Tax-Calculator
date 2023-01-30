@@ -91,7 +91,7 @@
 
           <a href="#basic-details">Try the calculator again</a>
           <p>Not so fast! Please enter your salary and deductions details to help us calculate your tax implications</p>
-          <button><a href="#basic-details">Try again</a></button>
+          <a href="#basic-details"><button>Try again</button></a>
 
         </ol>
 
@@ -163,12 +163,12 @@
 
         &nbsp; &nbsp; &nbsp;
 
-        <button style="color: rgb(177, 119, 81) padding=10px">
-          <a href="#income-details">Go to Next Step</a>
-        </button>
+        
+          <a href="#income-details"><button style="color: rgb(177, 119, 81) padding=10px">Go to Next Step</button></a>
+        
 
 
-        <!-- </div> -->
+        </div>
 
 
         <div class="col-xs-12 tab-pane fade" id="income-details"></div>
@@ -232,11 +232,8 @@
 
         <br /><br />
 
-        <button style="color: rgb(177, 119, 81) padding=10px">
-          <a href="#deductions">Go to Next Step</a>
-        </button>
-
-
+        <a href="#deductions"><button style="color: rgb(177, 119, 81) padding=10px">Go to Next Step</button></a>
+        
         <div class="col-xs-12 tab-pane fade" id="deductions"></div>
 
         <br><br>
@@ -296,14 +293,14 @@
 
         <br /><br />
 
-        <button style="color: rgb(81, 177, 86) padding=10px" onclick="calculate()">
-          Calculate
-        </button>
+<a href="#summary"><button style="color: rgb(81, 177, 86) padding=10px" onclick="calculate()">
+  Calculate
+</button></a>
       </div>
 
 
 
-      <div class="col-xs-12 tab-pane fade" id="summary"></div>
+      <div class="col-xs-12 tab-pane fade" id="summary">
       <p id="suggestion" ></p>
 
       <table class="table">
@@ -330,7 +327,7 @@
           </tr>
         </tbody>
       </table>
-
+    </div>
 
     </div>
   </div>
