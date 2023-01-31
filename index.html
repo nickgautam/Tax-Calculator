@@ -6,7 +6,9 @@
 
   <title>Income Tax Calculator - FY 2022-2023</title>
 
-  <link rel="stylesheet" href="index.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"> -->
+
+  <link rel="stylesheet" href="main.css" type="text/css" />
 
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
 
@@ -14,164 +16,98 @@
 
 <body>
 
-  <div class="main">
-
-    <div class="register">
-
-      <h1>Income Tax Calculator - FY 2022-2023</h1>
-
-      <small>
-
-        E-file tax returns in 3 minutes -> Explore Tax Filing
-
-      </small>
-
-      <div class="tax-calc">
-
-        <ol id="navigation-tabs" class="nav nav-tabs outer-list small">
-
-          <li class="active">
-
-            <a href="#basic-details" data-tracking-action="BasicDetails"
-              data-tracking-label="paytax/IncomeTaxCalculator" data-toggle="tab">
-
-              <strong>
-
-                <span>Basic Details</span>
-
-              </strong>
-
-            </a>
-
-          </li>
-
-          <li class="active">
-
-            <a href="#income-details" data-tracking-action="IncomeDetails"
-              data-tracking-label="paytax/IncomeTaxCalculator" data-toggle="tab">
-
-              <strong>
-                <span>Income Details</span>
-
-              </strong>
-            </a>
-
-          </li>
-
-          <li class="active">
-
-            <a href="#deductions" data-tracking-action="Deductions" data-tracking-label="paytax/IncomeTaxCalculator"
-              data-toggle="tab">
-
-              <strong>
-
-                <span>Deductions</span>
-
-              </strong>
-
-            </a>
-
-          </li>
-
-          <li class="active">
-
-            <a href="#summary" data-tracking-action="Summary" data-tracking-label="paytax/IncomeTaxCalculator"
-              data-toggle="tab">
-
-              <strong>
-
-                <span>Summary</span>
-
-              </strong>
-
-            </a>
-
-          </li>
-          <br>
-
-          <a href="#basic-details">Try the calculator again</a>
-          <p>Not so fast! Please enter your salary and deductions details to help us calculate your tax implications</p>
-          <a href="#basic-details"><button>Try again</button></a>
-
-        </ol>
-
-        <div class="col-xs-12 tab-pane fade" id="basic-details"></div>
-
-        &nbsp; &nbsp; &nbsp;
-
-        <br>
-
-        <label class="headLabel">Which Financial Year do you want to calculate taxes for?</label>
-
-        <br />
-
-        &nbsp; &nbsp; &nbsp;
-
-        <input value="new-regime" type="radio" name="year" onclick="displayRadioValue()" id="newRegime" checked />
-
-        &nbsp;
-
-        <span id="newRegime">FY 2022-2023 Latest Budget (Return to be filed between 1st April
-          2023 - 31st March 2024)</span>
-
-        <br />
-
-        &nbsp; &nbsp; &nbsp;
-
-        <input value="old-regime" type="radio" name="year" onclick="displayRadioValue()" id="oldRegime" />
-
-        &nbsp;
-
-        <span id="oldRegime">FY 2021-2022 (Return to be filed between 1st April 2022 - 31st
-          March 2023)</span>
-
-        <br /><br />&nbsp; &nbsp; &nbsp;
-
-        <label>Your age</label>
-
-        <br />
-
-        &nbsp; &nbsp; &nbsp;
-
-        <input type="radio" name="age" value="0 to 60" onclick="displayRadioValue()" id="0 to 60" checked />
-
-        &nbsp;
-
-        <span id="0 to 60">0 to 60</span>
-
-        <br />
-
-        &nbsp; &nbsp; &nbsp;
-
-        <input type="radio" name="age" value="60 to 80" onclick="displayRadioValue()" id="60 to 80" />
-
-        &nbsp;
-
-        <span id="60 to 80">60 to 80</span>
-
-        <br />
-
-        &nbsp; &nbsp; &nbsp;
-
-        <input type="radio" name="age" value="80 & above" onclick="displayRadioValue()" id="80 & above" />
-
-        &nbsp;
-
-        <span id="80 & above">80 & above</span>
-
-        <br /><br />
-
-        &nbsp; &nbsp; &nbsp;
-
+  <button class="tablink" onclick="openPage('basic-details', this, 'red')" id="defaultOpen">Basic Details</button>
+  <button class="tablink" onclick="openPage('income-details', this, 'green')"  id="incomeDetails">Income Details</button>
+  <button class="tablink" onclick="openPage('deduction', this, 'blue')" id="deductionDetails">Deduction</button>
+  <button class="tablink" onclick="openPage('try-again', this, 'orange')"id="summaryDetails">Summary</button>
+  
+  <div id="basic-details" class="tabcontent">
+    <h1>Income Tax Calculator - FY 2022-2023</h1>
+  
+        <small>
+  
+          E-file tax returns in 3 minutes - <a href="https://accounts.cleartax.in/v2?product=cleartax&return_path=L215YWNjb3VudC9zdGFydD9yZWY9dGF4LWNhbGMtc3ViaGVhZGluZyZ1dG1fc291cmNlPWl0ci1jb250ZW50LXRheGNhbGN1bGF0b3ImdXRtX21lZGl1bT13ZWJzaXRlJnV0bV9jYW1wYWlnbj1pdHItY29udGVudA==" target="_blank">Explore Tax Filing</a> 
+  
+        </small>
         
-          <a href="#income-details"><button style="color: rgb(177, 119, 81) padding=10px">Go to Next Step</button></a>
-        
+         &nbsp; &nbsp; &nbsp;
+  
+          <br><br>
+  
+          <label class="headLabel">Which Financial Year do you want to calculate taxes for?</label>
+  
+          <br />
+  
+          &nbsp; &nbsp; &nbsp;
+  
+          <input value="new-regime" type="radio" name="year" onclick="displayRadioValue()" id="newRegime" checked />
+  
+          &nbsp;
+  
+          <span id="newRegime">FY 2022-2023 Latest Budget (Return to be filed between 1st April
+            2023 - 31st March 2024)</span>
+  
+          <br />
+  
+          &nbsp; &nbsp; &nbsp;
+  
+          <input value="old-regime" type="radio" name="year" onclick="displayRadioValue()" id="oldRegime" />
+  
+          &nbsp;
+  
+          <span id="oldRegime">FY 2021-2022 (Return to be filed between 1st April 2022 - 31st
+            March 2023)</span>
+  
+          <br><br />&nbsp; &nbsp; &nbsp;
+  
+          <label>Your age</label>
+  
+          <br />
+  
+          &nbsp; &nbsp; &nbsp;
+  
+          <input type="radio" name="age" value="0 to 60" onclick="displayRadioValue()" id="0 to 60" checked />
+  
+          &nbsp;
+  
+          <span id="0 to 60">0 to 60</span>
+  
+          <br />
+  
+          &nbsp; &nbsp; &nbsp;
+  
+          <input type="radio" name="age" value="60 to 80" onclick="displayRadioValue()" id="60 to 80" />
+  
+          &nbsp;
+  
+          <span id="60 to 80">60 to 80</span>
+  
+          <br />
+  
+          &nbsp; &nbsp; &nbsp;
+  
+          <input type="radio" name="age" value="80 & above" onclick="displayRadioValue()" id="80 & above" />
+  
+          &nbsp;
+  
+          <span id="80 & above">80 & above</span>
+  
+          <br /><br />
+  
+          &nbsp; &nbsp; &nbsp;
+  
+            <a href="#incomeDetails"><button  class="tablink" onclick="openPage('income-details', this, 'green')" >Go to Next Step</button></a>
+  </div>
+  
+  <div id="income-details" class="tabcontent">
+    <h1>Income Tax Calculator - FY 2022-2023</h1>
+  
+        <small>
+  
+          E-file tax returns in 3 minutes - <a href="https://accounts.cleartax.in/v2?product=cleartax&return_path=L215YWNjb3VudC9zdGFydD9yZWY9dGF4LWNhbGMtc3ViaGVhZGluZyZ1dG1fc291cmNlPWl0ci1jb250ZW50LXRheGNhbGN1bGF0b3ImdXRtX21lZGl1bT13ZWJzaXRlJnV0bV9jYW1wYWlnbj1pdHItY29udGVudA==" target="_blank">Explore Tax Filing</a> 
+  
+        </small>
 
-
-        </div>
-
-
-        <div class="col-xs-12 tab-pane fade" id="income-details"></div>
         <br><br>
 
         <label>Income from Salary</label>
@@ -230,13 +166,22 @@
 
         <input type="number" name="interestLoan" onchange="getinterestLoan(this)" placeholder="" autocomplete="true"/>
 
-        <br /><br />
-
-        <a href="#deductions"><button style="color: rgb(177, 119, 81) padding=10px">Go to Next Step</button></a>
-        
-        <div class="col-xs-12 tab-pane fade" id="deductions"></div>
-
         <br><br>
+
+       
+        <a href="#deductionDetails"><button class="tablink" onclick="openPage('deduction', this, 'blue')">Go to Next Step</button></a>
+       
+  </div>
+  
+  <div id="deduction" class="tabcontent">
+    <h1>Income Tax Calculator - FY 2022-2023</h1>
+
+    <small>
+
+      E-file tax returns in 3 minutes - <a href="https://accounts.cleartax.in/v2?product=cleartax&return_path=L215YWNjb3VudC9zdGFydD9yZWY9dGF4LWNhbGMtc3ViaGVhZGluZyZ1dG1fc291cmNlPWl0ci1jb250ZW50LXRheGNhbGN1bGF0b3ImdXRtX21lZGl1bT13ZWJzaXRlJnV0bV9jYW1wYWlnbj1pdHItY29udGVudA==" target="_blank">Explore Tax Filing</a> 
+
+    </small>
+    <br><br>
         <label>Basic Deductions - 80C</label>
 
         <br />
@@ -293,15 +238,20 @@
 
         <br /><br />
 
-<a href="#summary"><button style="color: rgb(81, 177, 86) padding=10px" onclick="calculate()">
-  Calculate
-</button></a>
-      </div>
+        <a href="#summaryDetails"><button class="tablink" onclick="openPage('summary', this, 'orange')" onclick="calculate()" id="calculate-button">
+          Calculate
+        </button></a>
+  </div>
+  
+  <div id="summary" class="tabcontent">
+    <h1>Income Tax Calculator - FY 2022-2023</h1>
 
+    <small>
 
+      E-file tax returns in 3 minutes - <a href="https://accounts.cleartax.in/v2?product=cleartax&return_path=L215YWNjb3VudC9zdGFydD9yZWY9dGF4LWNhbGMtc3ViaGVhZGluZyZ1dG1fc291cmNlPWl0ci1jb250ZW50LXRheGNhbGN1bGF0b3ImdXRtX21lZGl1bT13ZWJzaXRlJnV0bV9jYW1wYWlnbj1pdHItY29udGVudA==" target="_blank">Explore Tax Filing</a> 
 
-      <div class="col-xs-12 tab-pane fade" id="summary">
-      <p id="suggestion" ></p>
+    </small>
+    <p id="suggestion" ></p>
 
       <table class="table">
         <thead>
@@ -327,12 +277,344 @@
           </tr>
         </tbody>
       </table>
+
+    </div>
+
+
+    <div id="try-again" class="tabcontent">
+      <a href="#basic-details" onclick="openPage('basic-details', this, 'red')">Try the calculator again</a><br>
+          <p >Not so fast! Please enter your salary and deductions details to help us calculate your tax implications</p>
+          <a href="#defaultOpen"><button class="tablink" onclick="openPage('basic-details', this, 'red')">Try again</button></a>
+    </div>
+
+    <!-- </div>
+
+  </div> -->
+
+  <!-- </div> -->
+  <!-- <div class="main">
+
+    <div class="register">
+
+      <h1>Income Tax Calculator - FY 2022-2023</h1>
+
+      <small>
+
+        E-file tax returns in 3 minutes - <a href="https://accounts.cleartax.in/v2?product=cleartax&return_path=L215YWNjb3VudC9zdGFydD9yZWY9dGF4LWNhbGMtc3ViaGVhZGluZyZ1dG1fc291cmNlPWl0ci1jb250ZW50LXRheGNhbGN1bGF0b3ImdXRtX21lZGl1bT13ZWJzaXRlJnV0bV9jYW1wYWlnbj1pdHItY29udGVudA==" target="_blank">Explore Tax Filing</a> 
+
+      </small> -->
+
+      <!-- <div class="tax-calc"> -->
+
+        <!-- <ol id="navigation-tabs" class="nav nav-tabs outer-list small"> -->
+
+          <!-- <li class="active"> -->
+
+            <!-- <a href="#basic-details" data-tracking-action="BasicDetails"
+              data-tracking-label="paytax/IncomeTaxCalculator" data-toggle="tab">
+
+              <strong>
+
+                <span>Basic Details</span>
+
+              </strong>
+
+            </a>
+
+          </li>
+
+          <li class="active">
+
+            <a href="#income-details" data-tracking-action="IncomeDetails"
+              data-tracking-label="paytax/IncomeTaxCalculator" data-toggle="tab">
+
+              <strong>
+                <span>Income Details</span>
+
+              </strong>
+            </a>
+
+          </li>
+
+          <li class="active">
+
+            <a href="#deductions" data-tracking-action="Deductions" data-tracking-label="paytax/IncomeTaxCalculator"
+              data-toggle="tab">
+
+              <strong>
+
+                <span>Deductions</span>
+
+              </strong>
+
+            </a>
+
+          </li>
+
+          <li class="active">
+
+            <a href="#tryAgain" data-tracking-action="Summary" data-tracking-label="paytax/IncomeTaxCalculator"
+              data-toggle="tab">
+
+              <strong>
+
+                <span>Summary</span>
+
+              </strong>
+
+            </a>
+
+          </li>
+          <br>
+
+          <a href="#basic-details" id="tryAgain">Try the calculator again</a><br>
+          <p >Not so fast! Please enter your salary and deductions details to help us calculate your tax implications</p>
+          <a href="#basic-details"><button>Try again</button></a>
+        </ol>
+
+        <div class="basicDetails" id="basic-details">
+
+        &nbsp; &nbsp; &nbsp;
+
+        <br>
+
+        <label class="headLabel">Which Financial Year do you want to calculate taxes for?</label>
+
+        <br />
+
+        &nbsp; &nbsp; &nbsp;
+
+        <input value="new-regime" type="radio" name="year" onclick="displayRadioValue()" id="newRegime" checked />
+
+        &nbsp;
+
+        <span id="newRegime">FY 2022-2023 Latest Budget (Return to be filed between 1st April
+          2023 - 31st March 2024)</span>
+
+        <br />
+
+        &nbsp; &nbsp; &nbsp;
+
+        <input value="old-regime" type="radio" name="year" onclick="displayRadioValue()" id="oldRegime" />
+
+        &nbsp;
+
+        <span id="oldRegime">FY 2021-2022 (Return to be filed between 1st April 2022 - 31st
+          March 2023)</span>
+
+        <br><br />&nbsp; &nbsp; &nbsp;
+
+        <label>Your age</label>
+
+        <br />
+
+        &nbsp; &nbsp; &nbsp;
+
+        <input type="radio" name="age" value="0 to 60" onclick="displayRadioValue()" id="0 to 60" checked />
+
+        &nbsp;
+
+        <span id="0 to 60">0 to 60</span>
+
+        <br />
+
+        &nbsp; &nbsp; &nbsp;
+
+        <input type="radio" name="age" value="60 to 80" onclick="displayRadioValue()" id="60 to 80" />
+
+        &nbsp;
+
+        <span id="60 to 80">60 to 80</span>
+
+        <br />
+
+        &nbsp; &nbsp; &nbsp;
+
+        <input type="radio" name="age" value="80 & above" onclick="displayRadioValue()" id="80 & above" />
+
+        &nbsp;
+
+        <span id="80 & above">80 & above</span>
+
+        <br /><br />
+
+        &nbsp; &nbsp; &nbsp;
+
+          <a href="#income-details"><button>Go to Next Step</button></a>
+       
+        </div> -->
+
+
+        <!-- <div class="incomeDetails" id="income-details">
+        <br><br> -->
+
+        <!-- <label>Income from Salary</label>
+
+        &nbsp; &nbsp; &nbsp;
+
+        <br>
+
+        <input type="number" name="salary" onchange="getSalary(this)" placeholder="" autocomplete="true"/>
+
+        <br><br>
+
+        <label>Exemptions & Deductions from Salary</label>
+
+        <br />
+
+        <input type="number" name="deduction" onchange="getDeduction(this)" placeholder="" autocomplete="true"/>
+
+        <br /><br />
+
+        <label>Income from Interest</label>
+
+        <br />
+
+        <input type="number" name="interest" onchange="getInterest(this)" placeholder="" autocomplete="true"/>
+
+        <br /><br />
+
+        <label>Other Income</label>
+
+        <br />
+
+        <input type="number" name="otherIncome" onchange="getotherIncome(this)" placeholder="" autocomplete="true"/>
+
+        <br><br>
+
+        <label>Interest Paid on Home Loan</label>
+
+        <br />
+
+        <input type="number" name="homeLoan" onchange="gethomeLoan(this)" placeholder="" autocomplete="true"/>
+
+        <br /><br />
+
+        <label>Rental Income Received</label>
+
+        <br />
+
+        <input type="number" name="rentalIncome" onchange="getrentalIncome(this)" placeholder="" autocomplete="true"/>
+
+        <br /><br />
+
+        <label>Interest Paid on Loan</label>
+
+        <br />
+
+        <input type="number" name="interestLoan" onchange="getinterestLoan(this)" placeholder="" autocomplete="true"/>
+
+        <br /><br />
+
+       
+          <a href="#deductions"><button>Go to Next Step</button></a>
+        -->
+<!-- 
+      </div>
+
+        <div class="deductionDetails" id="deductions"> -->
+
+        <!-- <br><br>
+        <label>Basic Deductions - 80C</label>
+
+        <br />
+
+        <input type="number" name="basicDeduction" onchange="getbasicDeduction(this)" placeholder="" autocomplete="true"/>
+
+        <br /><br />
+
+        <label>Interest from Deposits - 80TTB</label>
+
+        <br />
+
+        <input type="number" name="interestDeposit" onchange="getinterestDeposit(this)" placeholder="" autocomplete="true"/>
+
+        <br /><br />
+
+        <label>Medical Insurance - 80D</label>
+
+        <br />
+
+        <input type="number" name="medicalInsurance" onchange="getmedicalInsurance(this)" placeholder="" autocomplete="true"/>
+
+        <br /><br />
+
+        <label>Donations to Charity - 80G</label>
+
+        <br />
+
+        <input type="number" name="charityDonation" onchange="getcharityDonation(this)" placeholder="" autocomplete="true"/>
+
+        <br /><br />
+
+        <label>Interest on Educational Loan - 80E</label>
+
+        <br />
+
+        <input type="number" name="educationalLoan" onchange="geteducationalLoan(this)" placeholder="" autocomplete="true"/>
+
+        <br /><br />
+
+        <label>Interest on Housing Loan - 80EEA</label>
+
+        <br />
+
+        <input type="number" name="housingLoan"  onchange="gethousingLoan(this)" placeholder="" autocomplete="true"/>
+
+        <br /><br />
+
+        <label>Employee's contribution to NPS - 80CCD</label>
+
+        <br />
+
+        <input type="number" name="employeeContribution" onchange="getemployeeContribution(this)" placeholder="" autocomplete="true"/>
+
+        <br /><br />
+
+        <a href="#summary"><button style="color: rgb(81, 177, 86) padding=10px" onclick="calculate()" id="calculate-button">
+          Calculate
+        </button></a> -->
+
+      <!-- </div> -->
+
+
+
+      <!-- <div class="summaryDetails" id="summary"> -->
+      <!-- <p id="suggestion" ></p>
+
+      <table class="table">
+        <thead>
+          <th>Heads</th>
+          <th>Post-Budget (Old Regime)</th>
+          <th>Post-Budget (New Regime)</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gross Income</td>
+            <td id="old_gross">Amount</td>
+            <td id="new_gross">Amount </td>
+          </tr>
+          <tr>
+            <td>Deductions</td>
+            <td id="old_deduction">Amount</td>
+            <td id="new_deduction">Amount</td>
+          </tr>
+          <tr>
+            <td>Tax Payable</td>
+            <td id="old_tax">Amount</td>
+            <td id="new_tax">Amount</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
 
     </div>
-  </div>
+
+  </div> -->
+
   <script src="index.js"></script>
-</body>
 
+</body>
 
 </html>
