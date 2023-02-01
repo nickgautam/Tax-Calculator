@@ -1,24 +1,3 @@
-
-function openPage(pageName,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  console.log(tabcontent)
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(pageName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-
-
 //---------------------------------------------- All variables declaration ----------------------------------------------------//
 
 let salary = 0;
@@ -46,6 +25,39 @@ let income = 0;
 let selectRegime=null
 let chooseRegime=null
 
+
+//--------------------------------------- Function to open the new Nav Tab -----------------------------------------------//
+
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  console.log(tabcontent)
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+     tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+
+
+
+//----------------------------------Function to call the openPage function on clicking the buttons----------------------------//
+
+function nextFunction(id){
+  document.getElementById(id).click();
+
+}
+
+
 //--------------------------------------- Radio button function to get values -----------------------------------------------//
 
 function displayRadioValue() {
@@ -58,19 +70,23 @@ function displayRadioValue() {
 
   for (i = 0; i < age.length; i++) {
     if (age[i].checked) ageData = age[i].value;
+    // console.log(regime, ageData)
   }
 }
 
 displayRadioValue();
 
+
 //-----------------------------------Functions to get the value of required fields-------------------------------------------//
 
 function getSalary(el) {
   salary = +el.value;
+  console.log(salary)
 }
 
 function getDeduction(el) {
   deduction = +el.value;
+  console.log(deduction)
 }
 
 function getInterest(el) {
@@ -143,6 +159,7 @@ function calculate() {
     if (taxableIncome == 0) {
       document.getElementById("old_tax").innerHTML = 0;
       document.getElementById("new_tax").innerHTML = 0;
+      document.getElementById("suggestion").innerHTML= `Not so fast! Please enter your salary and deductions details to help us calculate your tax implications.`
     }
     else {
       if (taxableIncome <= 250000) {
@@ -194,6 +211,7 @@ function calculate() {
     if (taxableIncome == 0) {
       document.getElementById("old_tax").innerHTML = 0;
       document.getElementById("new_tax").innerHTML = 0;
+      document.getElementById("suggestion").innerHTML= `Not so fast! Please enter your salary and deductions details to help us calculate your tax implications.`
     }
 
     else {
@@ -243,6 +261,8 @@ function calculate() {
     if (taxableIncome == 0) {
       document.getElementById("old_tax").innerHTML = 0;
       document.getElementById("new_tax").innerHTML = 0;
+      // console.log("taxableIncome", taxableIncome)
+      document.getElementById("suggestion").innerHTML= `Not so fast! Please enter your salary and deductions details to help us calculate your tax implications.`
     }
 
     else {
@@ -287,6 +307,7 @@ function calculate() {
     if (taxableIncome == 0) {
       document.getElementById("old_tax").innerHTML = 0;
       document.getElementById("new_tax").innerHTML = 0;
+      document.getElementById("suggestion").innerHTML= `Not so fast! Please enter your salary and deductions details to help us calculate your tax implications.`
     }
    
     else {
@@ -348,10 +369,13 @@ function calculate() {
         chooseRegime= "Old Regime"
       }
 
-        document.getElementById("suggestion").innerHTML= `You should opt for ${selectRegime} as it will provide you benefit of Rs. ${Math.abs(newRegimeTax-oldRegimeTax)} over ${chooseRegime}.`
+        document.getElementById("suggestion").innerHTML= `ClearTax Suggestion: You should opt for ${selectRegime} as it will provide you benefit of Rs. ${Math.abs(newRegimeTax-oldRegimeTax)} over ${chooseRegime}.`
         document.getElementById("new_tax").innerHTML = newRegimeTax;
      
-    }
+
+      }
+     
+      nextFunction('summaryDetails')
   }
 }
 

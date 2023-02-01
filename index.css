@@ -1,39 +1,167 @@
 * {
-    margin-top: 10px;
-    margin-right: 10px;
-    padding-top: 10px;
-
+    margin: 10;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 500px;
+    font-family: sans-serif;
+    transition: all 0.3s ease;
+}
+   
+/* Set height of body and the document to 100% */
+body, html {
+          height: 100%;
+          margin: auto;
+          font-family: Arial;
+          text-align: center;
+          /* justify-content: center; */
+       
 }
 
-body {
-    background: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fhd%2520background%2F&psig=AOvVaw1jxJF81KCRFzP0ryRN8IEO&ust=1674539493058000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNDDz-7_3PwCFQAAAAAdAAAAABAE");
-    background-size: 280%;
-    background-position: -400px 0px;
+p{
+  text-align: center;
+  background-color: lightgreen;
+  width: 50%;
+  border-radius: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-;
+/* .tabcontent{
+  display:flex;
+  margin: 10px;
+  padding: 20px;
+} */
 
-div.main {
-    text-align: center;
-    width: 400px;
-    margin: 100px auto 0px auto;
+
+#income-details{
+  background-color: white;
+  display:flex;
+  /* flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%; */
+}
+
+
+.flex-box{
+ 
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  /* width: 100%; */
+}
+
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: around-between;
+  align-items: left;
+  justify-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 10px;
+  font-size: 17px;
+  width: 20%;
+ 
+}
+/*
+#tryagain{
+  text-align: center;
+  align-items: around-between;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+.tablink:hover {
+  background-color: rgb(164, 19, 184);
 }
 
 h1 {
-    text-align: center;
-    padding: 20px;
-    font-family: sans-serif;
+  margin-top: 100;
+  padding: 10px 10px;
+  color: red;
+  background-color: black;
+  justify-content: centre;
+  align-items: center;
+  text-align: center;
+  border-radius: 500px;
 }
 
 h2 {
-    text-align: center;
-    padding: 20px;
-    font-family: sans-serif;
+  color: red;
+  background-color: black;
 }
 
-p {
-    text-align: center;
-    color: gray;
-    padding: 20px;
-    font-family: sans-serif;
+label {
+  color: rgb(60, 0, 255);
+  text-align: center;
+  justify-content:center;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: auto;
+ 
 }
+
+input {
+  border-radius: 500px;
+  box-sizing: 100%;
+  border: 2px solid powderblue;
+  margin: 10px;
+  width: auto;
+  /* align-items: center; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  border-radius: 10px;
+  color: white;
+  background-color: purple;
+}
+
+button {
+  border-radius: 500px;
+  justify-items: center;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+#divertButton{
+  border-radius: 500px;
+  color: white;
+  background-color: rgb(32, 187, 225);
+ 
+  align-items: center;
+  text-align: center;
+}
+
+.table{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+thead {
+  color: red;
+  background-color: black;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+td {
+  background-color: aqua;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+#basic-details{
+  background-color: white;
+}
+
+#deduction{background-color: white;}
+#summary{background-color: white;}
